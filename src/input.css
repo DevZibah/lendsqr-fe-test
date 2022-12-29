@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
+/* Variables */
+:root {
+  /* neutral */
+  --BackgroundColor: #18181b;
+  --BackgroundColor2: #374151;
+  --TextHeading: #a1a1aa;
+  --Password: #52525b;
+  --Texts: white;
+
+  /* primary */
+  --NeonGreen: hsl(150, 100%, 66%);
+}
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+body {
+  color: var(--Texts);
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: var(--BackgroundColor);
+}
+.App {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sec-one h5 {
+  color: var(--TextHeading);
+}
+.div-one {
+  justify-content: space-between;
+  width: 20rem;
+  background-color: var(--BackgroundColor2);
+}
+.div-one p {
+  color: var(--TextHeading);
+}
+.icon {
+  cursor: pointer;
+  color: var(--NeonGreen);
+}
+.main-one {
+  background-color: var(--BackgroundColor2);
+}
+input[type='range'] {
+  overflow: hidden;
+  width: 80px;
+  -webkit-appearance: none;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  height: 10px;
+  -webkit-appearance: none;
+  background-color: var(--BackgroundColor);
+}
+
+input[type='range']::-webkit-slider-thumb {
+  width: 10px;
+  -webkit-appearance: none;
+  height: 10px;
+  cursor: ew-resize;
+  background: var(--NeonGreen);
+  box-shadow: -80px 0 0 80px var(--NeonGreen);
+}
+input[type='checkbox'] {
+  background-color: var(--NeonGreen);
+  cursor: pointer;
+  accent-color: var(--NeonGreen);
+}
+.capa {
+  color: var(--TextHeading);
+}
+.sec-two {
+  background-color: var(--BackgroundColor);
+}
+.sec-three {
+  background-color: var(--NeonGreen);
+  color: var(--BackgroundColor);
+  cursor: pointer;
+}
+.arroe {
+  margin-top: 5px;
+}
+@media (min-width: 768px) {
+  .sec-one,
+  .div-one {
+    width: 32rem;
+  }
+}
+@media (min-width: 1024px) {
+}
