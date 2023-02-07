@@ -1,13 +1,24 @@
-import React, { useContext } from 'react'
-import { StoreContext } from './contexts/StoreContext'
+import React, { useReducer } from 'react'
 
 const App = () => {
-  const { count, add } = useContext(StoreContext)
+  const initialState = { count: 0 }
+  const [state, dispatch] = useReducer(reducer, initialState)
+
+  function reducer(state, action) {
+    if (action.type === 'increment') {
+      return { count: state.count + 1 }
+    } else if (action.type === 'decrement') {
+      return { count: state.count - 1 }
+    } else {
+      return state
+    }
+  }
 
   return (
     <div>
-      <p onClick={add}>count</p>
-      <h1>{count}</h1>
+      <p onClick={() => dispatch({ type: 'increment' })}>Increase</p>
+      <p onClick={() => dispatch({ type: 'decrement' })}>Decrease</p>
+      <h1>{state.count}</h1>
     </div>
   )
 }
